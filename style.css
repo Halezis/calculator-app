@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+:root {
+  --ff: 'League Spartan', sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  --main-background: hsl(222, 26%, 31%);
+  --toggle-keypad-background: hsl(223, 31%, 20%);
+  --screen-background: hsl(224, 36%, 15%);
+  --key-background-1: hsl(225, 21%, 49%);
+  --key-shadow-1: hsl(224, 28%, 35%);
+  --key-background-2: hsl(6, 63%, 50%);
+  --key-shadow-2: hsl(6, 70%, 34%);
+  --key-background-3: hsl(30, 25%, 89%);
+  --key-shadow-3: hsl(28, 16%, 65%);
+  --text: #fff;
+  --text2: hsl(221, 14%, 31%);
+  --white: #fff;
+
+  font-family: var(--ff);
+  font-size: 1.6rem;
+  background-color: var(--main-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: 0.3s ease;
+}
+
+body.theme2 {
+  --main-background: hsl(0, 0%, 90%);
+  --toggle-keypad-background: hsl(0, 5%, 81%);
+  --screen-background: hsl(0, 0%, 93%);
+  --key-background-1: hsl(185, 42%, 37%);
+  --key-shadow-1: hsl(185, 58%, 25%);
+  --key-background-2: hsl(25, 98%, 40%);
+  --key-shadow-2: hsl(25, 99%, 27%);
+  --key-background-3: hsl(45, 7%, 89%);
+  --key-shadow-3: hsl(35, 11%, 61%);
+  --text: hsl(60, 10%, 19%);
+  --text2: hsl(60, 10%, 19%);
+  --white: #fff;
+}
+
+body.theme3 {
+  --main-background: hsl(268, 75%, 9%);
+  --toggle-keypad-background: hsl(268, 71%, 12%);
+  --screen-background: hsl(268, 71%, 12%);
+  --key-background-1: hsl(281, 89%, 26%);
+  --key-shadow-1: hsl(285, 91%, 52%);
+  --key-background-2: hsl(176, 100%, 44%);
+  --key-shadow-2: hsl(177, 92%, 70%);
+  --key-background-3: hsl(268, 47%, 21%);
+  --key-shadow-3: hsl(290, 70%, 36%);
+  --text: hsl(52, 100%, 62%);
+  --text2: hsl(52, 100%, 62%);
+  --text3: hsl(198, 20%, 13%);
+  --white: #fff;
+}
+
+main {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text);
+}
+
+.header-theme {
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.header-theme p {
+  margin-bottom: 0.6rem;
+}
+
+.header-btn-top {
+  padding: 0.3rem 1rem;
+  letter-spacing: 0.6rem;
+}
+
+.header-btn-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.2rem;
+  width: 7rem;
+  height: 2.5rem;
+  background-color: var(--toggle-keypad-background);
+  border-radius: 1.5rem;
+}
+
+.theme-one,
+.theme-two,
+.theme-three {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: inherit;
+  transition: 0.3s ease;
+}
+
+.theme-one.active,
+.theme-two.active,
+.theme-three.active {
+  background-color: var(--key-background-2);
+}
+
+.calc-display {
+  width: 100%;
+  height: 10rem;
+  background-color: var(--screen-background);
+  border-radius: 1rem;
+  padding-right: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: var(--text);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.calc-input {
+  background-color: var(--toggle-keypad-background);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.calc-input-top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  gap: 2rem;
+}
+
+.calc-input-bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  gap: 2rem;
+}
+
+.input-btn {
+  width: 7.5rem;
+  height: 5rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--key-background-3);
+  box-shadow: 0 2px 3px var(--key-shadow-3);
+  font-size: 3rem;
+  color: var(--text2);
+  cursor: pointer;
+}
+
+.input-btn:hover {
+  background-color: var(--key-shadow-3);
+  box-shadow: 0 2px 3px var(--key-background-3);
+}
+
+.delete-btn {
+  text-transform: uppercase;
+  color: white;
+  font-size: 2.2rem;
+  background-color: var(--key-background-1);
+  box-shadow: 0 2px 3px var(--key-shadow-1);
+}
+
+.delete-btn:hover {
+  background-color: var(--key-shadow-1);
+  box-shadow: 0 2px 3px var(--key-background-1);
+}
+
+.operation-btn {
+  width: 17rem;
+  height: 5rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--key-background-1);
+  box-shadow: 0 2px 3px var(--key-shadow-1);
+  font-size: 3rem;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.operation-btn:hover {
+  background-color: var(--key-shadow-1);
+  box-shadow: 0 2px 3px var(--key-background-1);
+}
+
+.reset-btn {
+  text-transform: uppercase;
+  font-size: 2.2rem;
+}
+
+.equals-btn {
+  background-color: var(--key-background-2);
+  box-shadow: 0 2px 3px var(--key-shadow-2);
+}
+
+.equals-btn:hover {
+  background-color: var(--key-shadow-2);
+  box-shadow: 0 2px 3px var(--key-background-2);
+}
+
+.input-btn:active,
+.operation-btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 550px) {
+  main {
+    width: 330px;
+  }
+
+  .input-btn {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .operation-btn {
+    width: 13.3rem;
+    height: 5.5rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  /* body {
+    --main-background: hsl(268, 75%, 9%);
+    --toggle-keypad-background: hsl(268, 71%, 12%);
+    --screen-background: hsl(268, 71%, 12%);
+    --key-background-1: hsl(281, 89%, 26%);
+    --key-shadow-1: hsl(285, 91%, 52%);
+    --key-background-2: hsl(176, 100%, 44%);
+    --key-shadow-2: hsl(177, 92%, 70%);
+    --key-background-3: hsl(268, 47%, 21%);
+    --key-shadow-3: hsl(290, 70%, 36%);
+    --text: hsl(52, 100%, 62%);
+    --text2: hsl(52, 100%, 62%);
+    --text3: hsl(198, 20%, 13%);
+    --white: #fff;
+  } */
+}
+
+@media (prefers-color-scheme: light) {
+  /* body {
+    --main-background: hsl(0, 0%, 90%);
+    --toggle-keypad-background: hsl(0, 5%, 81%);
+    --screen-background: hsl(0, 0%, 93%);
+    --key-background-1: hsl(185, 42%, 37%);
+    --key-shadow-1: hsl(185, 58%, 25%);
+    --key-background-2: hsl(25, 98%, 40%);
+    --key-shadow-2: hsl(25, 99%, 27%);
+    --key-background-3: hsl(45, 7%, 89%);
+    --key-shadow-3: hsl(35, 11%, 61%);
+    --text: hsl(60, 10%, 19%);
+    --text2: hsl(60, 10%, 19%);
+    --white: #fff;
+  } */
+}
